@@ -19,3 +19,6 @@ As the name indicates, these are the branches that can be created and deleted wh
 
 ## Tags
 Tags should start with **v** and be [semver](https://semver.org/) compatible. Example: `v1.2.3`. Tags are being used for building and tagging production-ready container images.
+
+## Commit message
+Please, follow https://www.conventionalcommits.org/ when you create a commit message as often as possible.
