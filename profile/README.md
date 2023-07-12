@@ -11,9 +11,9 @@ These branches will be available in your repository on permanent bases. Their na
 ## Temporary Git Branches
 As the name indicates, these are the branches that can be created and deleted when needed. They can be as follows:
 
-- Bug Fix
-- Hot Fix
-- Feature Branches
+- Bug Fix (bugfix/XXX-42-explanatory_name)
+- Hot Fix (hotfix/XXX-42-explanatory_name)
+- Feature Branches (feature/XXX-42-explanatory_name)
 - Experimental Branches
 - WIP branches
 
