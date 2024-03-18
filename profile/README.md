@@ -15,7 +15,7 @@ As the name indicates, these are the branches that can be created and deleted wh
 - **Release** (release/v1.2.3)
 
 ## Tags
-Tags should be [semver](https://semver.org/) compatible. Example: `1.2.3`, `1.0.0-alpha` or `2.0.0-rc.2`. Tags are being used for building and tagging production-ready container images.
+Tags should be [semver](https://semver.org/) compatible. Example: `v1.2.3`, `v1.0.0-alpha` or `v2.0.0-rc.2`. Tags are being used for building and tagging production-ready container images.
 
 ## Commit message
 Please, follow https://www.conventionalcommits.org/ when you create a commit message as often as possible.
