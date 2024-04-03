@@ -7,11 +7,13 @@ SnapAds development flow incorporates the git branching model called `Git Flow`,
 ## Allowed Git Branch Names
 As the name indicates, these are the branches that can be created and deleted when needed. They can be as follows:
 
-- **Main** contains the latest code, that has been used for creating the recent release tag (main)
+- **Main** contains the latest code, that has been used for creating the recent release tag (`latest` tag)
 - **Develop** - ongoing development goes here (develop)
 - **Bugfix** (bugfix/XXX-42-explanatory_name)
 - **Hotfix** (hotfix/XXX-42-explanatory_name)
 - **Feature** (feature/XXX-42-explanatory_name)
+- **Support** (support/XXX-42-explanatory_name)
+- **Test** (test/XXX-42-explanatory_name)
 - **Release** (release/v1.2.3)
 
 ## Tags
@@ -19,3 +21,21 @@ Tags should be [semver](https://semver.org/) compatible. Example: `v1.2.3`, `v1.
 
 ## Commit message
 Please, follow https://www.conventionalcommits.org/ when you create a commit message as often as possible.
+
+### Feature Development Phase
+- **Feature Branch Creation**: Developers create a feature branch from the release branch.
+- **Feature Implementation**: Developers work on implementing the feature, committing changes to the feature branch.
+- **Code Review**: Code review occurs when developers create a pull request to merge changes from the feature branch into the release branch.
+
+### Stabilization Phase
+- **Merge to Release Branch**: Once features are completed and deemed stable, they're merged into the release branch.
+- **Testing**: The release branch is continuously deployed to the test environment for comprehensive testing as it gets updated. Images are built from the release branch updates, and the test environment is updated accordingly.
+
+### Release Preparation Phase
+- **Pull Request to Main Branch**: Once all features are tested on the test environment and deemed ready, a pull request is created from the release branch into the main branch.
+- **Tagging**: A tag is created with the same version as the release branch.
+
+### Deployment Phase
+- **Image Building**: Images are built from the tagged version.
+- **Deployment to Production**: The built images are deployed to the production environment.
+
