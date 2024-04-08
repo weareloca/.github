@@ -56,6 +56,7 @@
   git pull origin main
   git tag -a v1.0.0 -m "Release version 1.0.0"
   git push origin v1.0.0
+  # Use GitHub UI to create the release based on the tag
   ```
 
 ### 8. Merge Back to Develop
