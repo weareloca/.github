@@ -22,6 +22,17 @@ Tags should be [semver](https://semver.org/) compatible. Example: `v1.2.3`, `v1.
 ## Commit message
 Please, follow https://www.conventionalcommits.org/ when you create a commit message as often as possible.
 
+## Changelog
+We follow the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format for maintaining changelogs. Each project should maintain a `CHANGELOG.md` file that documents all notable changes in a clear and organized manner. The changelog should:
+
+- List changes in reverse chronological order (newest first)
+- Group changes by version
+- Use the following categories: Added, Changed, Deprecated, Removed, Fixed, Security
+- Include the release date for each version
+- Follow [semantic versioning](https://semver.org/)
+
+For more details on changelog best practices, please refer to https://keepachangelog.com/en/1.1.0/
+
 ## Workflow Documentation
 
 For details on our development and deployment workflows, please see the following documents:
