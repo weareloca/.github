@@ -47,17 +47,6 @@ Looking to improve your development workflow? Check out these resources:
 - **[Startup Improvements Guide](../STARTUP_IMPROVEMENTS.md)** - Comprehensive recommendations for balancing code quality with development velocity. Prioritized by impact vs. effort, specifically tailored for small startups.
 - **[Quick Start Guide](../QUICK_START.md)** - Step-by-step instructions to implement recommended improvements, with commands and examples for our tech stack (Laravel, NestJS, Next.js, Terraform).
 
-## CI/CD Templates
-
-Ready-to-use GitHub Actions workflow templates for our tech stack:
-
-- **[Node.js CI](../workflow-templates/node-ci.yml)** - For NestJS and Next.js projects
-- **[Laravel CI](../workflow-templates/laravel-ci.yml)** - For Laravel PHP applications
-- **[Terraform CI](../workflow-templates/terraform-ci.yml)** - For infrastructure as code
-- **[Lambda/SAM CI](../workflow-templates/lambda-sam-ci.yml)** - For AWS Lambda functions
-
-See the [workflow templates README](../workflow-templates/README.md) for detailed setup instructions.
-
 ## Repository Templates
 
 Use these templates to maintain consistency across projects:

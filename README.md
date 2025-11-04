@@ -18,7 +18,6 @@ This repository contains standards, templates, and improvement recommendations f
 
 ### For Implementation
 - **[QUICK_START.md](QUICK_START.md)** - Step-by-step implementation guide with actual commands
-- **[workflow-templates/](workflow-templates/)** - Production-ready CI/CD templates for your stack
 
 ## 🛠️ Tech Stack
 
@@ -29,12 +28,6 @@ Our recommendations are tailored for:
 - **Serverless**: AWS Lambda with SAM
 
 ## 📋 Templates Available
-
-### GitHub Actions Workflows
-- `workflow-templates/node-ci.yml` - For NestJS/Next.js
-- `workflow-templates/laravel-ci.yml` - For Laravel
-- `workflow-templates/terraform-ci.yml` - For Terraform
-- `workflow-templates/lambda-sam-ci.yml` - For AWS Lambda/SAM
 
 ### Issue & PR Templates
 - `PULL_REQUEST_TEMPLATE.md` - Structured PR descriptions
@@ -111,6 +104,7 @@ Follow [Keep a Changelog](https://keepachangelog.com/) format in `CHANGELOG.md`.
 
 ## 🔗 External Resources
 
+- [The Twelve-Factor App](https://12factor.net/) - Best practices for modern web applications
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Laravel Documentation](https://laravel.com/docs)
 - [NestJS Documentation](https://docs.nestjs.com/)
@@ -130,7 +124,6 @@ To improve these standards:
 
 - **Strategic questions**: Read [STARTUP_IMPROVEMENTS.md](STARTUP_IMPROVEMENTS.md)
 - **Implementation help**: Check [QUICK_START.md](QUICK_START.md)
-- **CI/CD setup**: See [workflow-templates/README.md](workflow-templates/README.md)
 - **Team discussions**: Create an issue using templates
 
 ## 📊 Success Metrics

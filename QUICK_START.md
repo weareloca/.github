@@ -137,28 +137,57 @@ pre-commit install
 
 ### Setup GitHub Actions
 
-1. **Choose the appropriate workflow template**
-   - `workflow-templates/node-ci.yml` for NestJS/Next.js projects
-   - `workflow-templates/laravel-ci.yml` for Laravel projects
-   - `workflow-templates/terraform-ci.yml` for Terraform infrastructure
-   - `workflow-templates/lambda-sam-ci.yml` for AWS Lambda/SAM projects
-
-2. **Copy to your repository**
+1. **Create a basic workflow from scratch**
+   
+   For NestJS/Next.js:
    ```bash
    mkdir -p .github/workflows
-   # Example for NestJS/Next.js
-   cp workflow-templates/node-ci.yml /path/to/your-repo/.github/workflows/ci.yml
-   # Or for Laravel
-   cp workflow-templates/laravel-ci.yml /path/to/your-repo/.github/workflows/ci.yml
+   cat > .github/workflows/ci.yml << 'EOF'
+   name: CI
+   on: [push, pull_request]
+   jobs:
+     test:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+         - uses: actions/setup-node@v4
+           with:
+             node-version: '20'
+             cache: 'npm'
+         - run: npm ci
+         - run: npm run lint
+         - run: npm test
+         - run: npm run build
+   EOF
    ```
 
-3. **Customize for your project**
+   For Laravel:
+   ```bash
+   mkdir -p .github/workflows
+   cat > .github/workflows/ci.yml << 'EOF'
+   name: CI
+   on: [push, pull_request]
+   jobs:
+     test:
+       runs-on: ubuntu-latest
+       steps:
+         - uses: actions/checkout@v4
+         - uses: shivammathur/setup-php@v2
+           with:
+             php-version: '8.3'
+         - run: composer install
+         - run: ./vendor/bin/pint --test
+         - run: php artisan test
+   EOF
+   ```
+
+2. **Customize for your project**
    - Update PHP/Node.js versions if needed
-   - Adjust database services (MySQL, PostgreSQL, Redis)
+   - Add database services if required
    - Configure test commands and coverage thresholds
    - Add environment variables
 
-4. **Test the workflow**
+3. **Test the workflow**
    - Create a test branch
    - Make a small change
    - Push and create a PR

@@ -26,13 +26,6 @@ IMPLEMENTATION_SUMMARY.md ← You are here! Read this for overview
     │
     └─→ Templates & Examples
             ↓
-        ├─→ workflow-templates/ ← CI/CD workflows
-        │   ├── node-ci.yml (NestJS/Next.js)
-        │   ├── laravel-ci.yml (Laravel)
-        │   ├── terraform-ci.yml (Infrastructure)
-        │   ├── lambda-sam-ci.yml (AWS Lambda)
-        │   └── README.md (Setup guide)
-        │
         ├─→ ISSUE_TEMPLATE/ ← Structured issue reporting
         │   ├── bug_report.yml
         │   ├── feature_request.yml
@@ -58,13 +51,7 @@ IMPLEMENTATION_SUMMARY.md ← You are here! Read this for overview
 3. Follow the commands and implement it
 4. Return for next improvement
 
-### Path C: "I need CI/CD for a specific project"
-1. Go to `workflow-templates/README.md`
-2. Choose your template (Laravel/NestJS/Next.js/Terraform/Lambda)
-3. Copy and customize for your project
-4. Test and deploy
-
-### Path D: "I want to standardize our repositories"
+### Path C: "I want to standardize our repositories"
 1. Copy `PULL_REQUEST_TEMPLATE.md` to your repos
 2. Copy `ISSUE_TEMPLATE/` folder to your repos
 3. Customize `CODEOWNERS.example` and copy
@@ -138,13 +125,25 @@ git push
 
 ### Thursday: CI/CD Setup (3-4 hours)
 ```bash
-# Copy appropriate template
+# Create your GitHub Actions workflow from scratch or use existing examples
+# from the GitHub Actions marketplace or your preferred CI/CD documentation
 mkdir -p .github/workflows
-cp /path/to/.github/workflow-templates/laravel-ci.yml .github/workflows/ci.yml
-# Or for Node.js:
-# cp /path/to/.github/workflow-templates/node-ci.yml .github/workflows/ci.yml
 
-# Customize for your project, then commit
+# For example, create a basic Node.js workflow
+cat > .github/workflows/ci.yml << 'EOF'
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npm test
+EOF
+
+# Commit and push
 git add .github/workflows/
 git commit -m "ci: add GitHub Actions workflow"
 git push
@@ -205,7 +204,6 @@ It's better to have:
 | [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) | Overview and impact | 10 min |
 | [STARTUP_IMPROVEMENTS.md](STARTUP_IMPROVEMENTS.md) | All recommendations | 20 min |
 | [QUICK_START.md](QUICK_START.md) | Implementation guide | 15 min |
-| [workflow-templates/README.md](workflow-templates/README.md) | CI/CD setup | 10 min |
 
 ## ❓ Common Questions
 
@@ -219,7 +217,7 @@ It's better to have:
 **A:** Initial setup: 1 week. Long-term: Saves 5-10 hours/week per developer.
 
 ### Q: What if CI is too slow?
-**A:** Start simple. Only run essential checks. Optimize later. See workflow templates for caching strategies.
+**A:** Start simple. Only run essential checks. Optimize later with caching and parallel jobs.
 
 ### Q: Can we customize the templates?
 **A:** Absolutely! These are starting points. Adjust based on your team's needs.
@@ -231,8 +229,7 @@ It's better to have:
 
 1. **For strategic questions**: Read `STARTUP_IMPROVEMENTS.md`
 2. **For implementation help**: Check `QUICK_START.md`
-3. **For CI/CD issues**: See `workflow-templates/README.md`
-4. **For team discussions**: Create an issue using the templates
+3. **For team discussions**: Create an issue using the templates
 
 ## 🎓 Learning Resources
 

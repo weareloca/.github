@@ -38,40 +38,7 @@ Practical commands and configurations for your tech stack:
 - **Week 3-4**: Linting, security scanning
 - **Month 2+**: Error tracking, advanced testing
 
-### 3. **GitHub Actions Workflow Templates**
-Four production-ready CI/CD templates:
-
-#### `workflow-templates/node-ci.yml` (NestJS/Next.js)
-- Multi-version Node.js testing (18.x, 20.x)
-- Prettier formatting check
-- ESLint linting
-- TypeScript type checking
-- Jest tests with coverage
-- Build verification
-
-#### `workflow-templates/laravel-ci.yml` (Laravel)
-- Multi-version PHP testing (8.2, 8.3)
-- MySQL + Redis services
-- Laravel Pint code style check
-- PHPStan static analysis
-- PHPUnit/Pest tests with coverage
-- Database migrations
-
-#### `workflow-templates/terraform-ci.yml` (Infrastructure)
-- Multi-version Terraform testing
-- Format and validation checks
-- TFLint for best practices
-- Checkov security scanning
-- Plan generation with PR comments
-
-#### `workflow-templates/lambda-sam-ci.yml` (AWS Lambda)
-- SAM CLI setup and validation
-- Node.js/Python support
-- Linting and testing
-- SAM build and local testing
-- Optional auto-deployment
-
-### 4. **Issue & PR Templates**
+### 3. **Issue & PR Templates**
 Structured templates for consistency:
 
 **Issue Templates**:
@@ -85,7 +52,7 @@ Structured templates for consistency:
 - Self-review reminder
 - Breaking changes section
 
-### 5. **Configuration Examples**
+### 4. **Configuration Examples**
 
 #### `CODEOWNERS.example`
 - Automatic reviewer assignment by file path
@@ -105,13 +72,7 @@ Structured templates for consistency:
 - Supported versions
 - Best practices for contributors
 
-### 6. **Documentation**
-
-#### `workflow-templates/README.md`
-- Detailed setup for each workflow
-- Customization examples
-- Troubleshooting guide
-- Best practices
+### 5. **Documentation**
 
 #### Updated `profile/README.md`
 - Links to all new resources
@@ -143,12 +104,9 @@ Structured templates for consistency:
 ### For Next Week
 
 4. **Add CI/CD**:
-   ```bash
-   # Choose appropriate template
-   cp workflow-templates/laravel-ci.yml /path/to/laravel/.github/workflows/ci.yml
-   cp workflow-templates/node-ci.yml /path/to/nestjs/.github/workflows/ci.yml
-   cp workflow-templates/terraform-ci.yml /path/to/terraform/.github/workflows/ci.yml
-   ```
+   - Create GitHub Actions workflows from scratch or using examples from GitHub Actions marketplace
+   - Refer to GitHub Actions documentation for your specific tech stack
+   - Start simple with basic linting and testing
 
 5. **Enable branch protection**:
    - Go to repo Settings → Branches
@@ -219,7 +177,6 @@ For team members new to these tools:
 |----------|---------|-------------|
 | `STARTUP_IMPROVEMENTS.md` | Strategic recommendations | Planning improvements |
 | `QUICK_START.md` | Implementation guide | Setting up tools |
-| `workflow-templates/README.md` | CI/CD setup | Adding automation |
 | `PULL_REQUEST_TEMPLATE.md` | PR structure | Every pull request |
 | `ISSUE_TEMPLATE/*.yml` | Issue reporting | Reporting bugs/features |
 | `CODEOWNERS.example` | Code ownership | Setting up reviews |
@@ -249,7 +206,6 @@ Remember these guiding principles from the recommendations:
 ## ❓ Questions?
 
 - Review the main documents for detailed explanations
-- Check workflow templates README for CI/CD questions
 - Create an issue using the templates to track decisions
 - Iterate based on team feedback
 
