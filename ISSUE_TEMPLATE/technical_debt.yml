@@ -1,0 +1,99 @@
+name: 🔧 Technical Debt
+description: Report technical debt that should be addressed
+title: "[Tech Debt]: "
+labels: ["technical-debt", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to document technical debt that needs to be addressed.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the technical debt issue
+      placeholder: What needs to be improved or refactored?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: Describe how things currently work
+      placeholder: What's the current implementation?
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-state
+    attributes:
+      label: Desired State
+      description: Describe how things should work
+      placeholder: What would the improved implementation look like?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: What is the impact of not addressing this?
+      placeholder: |
+        - Performance issues
+        - Maintenance difficulties
+        - Security concerns
+        - Developer experience
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of technical debt is this?
+      options:
+        - Code Quality (refactoring needed)
+        - Performance (optimization needed)
+        - Security (vulnerability or hardening)
+        - Testing (missing or inadequate tests)
+        - Documentation (missing or outdated docs)
+        - Dependencies (outdated or problematic)
+        - Architecture (design improvements)
+        - DevOps (infrastructure or tooling)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How urgent is addressing this?
+      options:
+        - High (should address soon)
+        - Medium (address when possible)
+        - Low (address eventually)
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Location
+      description: Where is this technical debt located?
+      placeholder: |
+        Files, modules, or components affected:
+        - src/components/UserProfile.js
+        - api/controllers/auth.py
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: Related issues, past discussions, etc.
+    validations:
+      required: false

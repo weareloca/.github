@@ -1,0 +1,113 @@
+# Dependabot configuration for Laravel/NestJS/Next.js/Terraform stack
+# To enable Dependabot, rename this file to dependabot.yml
+# For more information: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # npm/Node.js dependencies (NestJS/Next.js)
+  - package-ecosystem: "npm"
+    directory: "/" # Location of package.json (adjust if in subdirectory)
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "weareloca/frontend-team"
+    labels:
+      - "dependencies"
+      - "javascript"
+    # Group minor and patch updates together to reduce PR noise
+    groups:
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+    # Ignore specific packages if needed
+    ignore:
+      # Example: ignore major updates for specific packages
+      # - dependency-name: "next"
+      #   update-types: ["version-update:semver-major"]
+
+  # Composer/PHP dependencies (Laravel)
+  - package-ecosystem: "composer"
+    directory: "/" # Location of composer.json
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "weareloca/backend-team"
+    labels:
+      - "dependencies"
+      - "php"
+    groups:
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # Terraform dependencies
+  - package-ecosystem: "terraform"
+    directory: "/" # Location of Terraform files
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "weareloca/devops-team"
+    labels:
+      - "dependencies"
+      - "terraform"
+      - "infrastructure"
+
+  # Docker (for Lambda containers or other Docker images)
+  - package-ecosystem: "docker"
+    directory: "/" # Location of Dockerfile
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "weareloca/devops-team"
+    labels:
+      - "dependencies"
+      - "docker"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "weareloca/devops-team"
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+# If you have multiple npm/composer projects in subdirectories, add them here:
+# - package-ecosystem: "npm"
+#   directory: "/frontend"
+#   schedule:
+#     interval: "weekly"
+#
+# - package-ecosystem: "npm"
+#   directory: "/lambda-functions"
+#   schedule:
+#     interval: "weekly"
