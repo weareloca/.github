@@ -1,0 +1,73 @@
+# CODEOWNERS file
+# 
+# This file defines individuals or teams responsible for code in this repository.
+# When a pull request modifies code with an owner, those owners are automatically
+# requested for review.
+#
+# Order matters! The last matching pattern has the most precedence.
+# For more information: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+# These owners will be the default owners for everything unless a later match takes precedence
+* @weareloca/core-team
+
+# Documentation
+*.md @weareloca/documentation-team
+/docs/ @weareloca/documentation-team
+
+# Configuration files
+*.yml @weareloca/devops-team
+*.yaml @weareloca/devops-team
+*.json @weareloca/devops-team
+/config/ @weareloca/devops-team
+
+# CI/CD workflows
+/.github/ @weareloca/devops-team
+
+# Frontend code
+/frontend/ @weareloca/frontend-team
+/ui/ @weareloca/frontend-team
+*.css @weareloca/frontend-team
+*.scss @weareloca/frontend-team
+*.jsx @weareloca/frontend-team
+*.tsx @weareloca/frontend-team
+
+# Backend code
+/backend/ @weareloca/backend-team
+/api/ @weareloca/backend-team
+/services/ @weareloca/backend-team
+
+# Database
+/migrations/ @weareloca/backend-team @weareloca/dba
+/schema/ @weareloca/backend-team @weareloca/dba
+
+# Infrastructure
+/terraform/ @weareloca/devops-team
+/kubernetes/ @weareloca/devops-team
+/docker/ @weareloca/devops-team
+Dockerfile @weareloca/devops-team
+docker-compose.yml @weareloca/devops-team
+
+# Security-sensitive files
+/security/ @weareloca/security-team
+*.key @weareloca/security-team
+*.pem @weareloca/security-team
+
+# Tests
+/tests/ @weareloca/qa-team
+/test/ @weareloca/qa-team
+*.test.* @weareloca/qa-team
+*.spec.* @weareloca/qa-team
+
+# Package management
+package.json @weareloca/backend-team
+package-lock.json @weareloca/backend-team
+requirements.txt @weareloca/backend-team
+go.mod @weareloca/backend-team
+go.sum @weareloca/backend-team
+Gemfile @weareloca/backend-team
+Gemfile.lock @weareloca/backend-team
+
+# Examples for specific individuals
+# /critical-component/ @username
+# /feature-x/ @team-lead @senior-dev
