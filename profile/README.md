@@ -39,5 +39,6 @@ For details on our development and deployment workflows, please see the followin
 
 - [Regular Feature Workflow](flows/regular_feature.md) - Steps for developing and integrating new features within the regular release cycle.
 - [Hotfix/Bugfix Workflow Without Testing](flows/hotfix_bugfix_without_testing.md) - Steps for urgent fixes that need immediate deployment without prior testing.
+- [Engineering Manifesto](../manifesto.md) - Principles for AI usage, code ownership, and code review.
 
 Please follow these guidelines to maintain consistency and quality in project contributions.
